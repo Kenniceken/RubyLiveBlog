@@ -1,11 +1,13 @@
-<h1>All Posts</h1>
+<div class="mui-container-fluid">
+  <h1>Latest Blogs</h1>
 
-<ul id="posts">
-  <% @posts.each do |post| %>
-    <li>
-      <%= link_to post.title, post_path(post), class: 'post_title' %>
-    </li>
-  <% end %>
-</ul>
-
-<%= link_to "Create New Post", new_post_path, class: "new_post" %>
+  <div class="mui-row">
+      <% @posts.each do |post| %>
+        <div class="mui-col-xs-12 mui-col-md-4 cardStyle">
+            <div class="mui-panel my-3 text-center">
+              <%= link_to post.title, post_path(post), class: ' text-center post_title' %>
+            </div>
+        </div>
+      <% end %>
+  </div>
+</div>

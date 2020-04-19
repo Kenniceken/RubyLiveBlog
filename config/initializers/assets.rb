@@ -18,6 +18,7 @@ Rails.application.config.assets.precompile += %w(
   main.js
   custom.scss
   bootstrap.scss
+  font-awesome.min.css
   normalize.css
   mixins.scss
   variables.scss

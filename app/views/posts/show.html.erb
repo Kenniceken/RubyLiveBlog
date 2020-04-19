@@ -1,4 +1,19 @@
-<h1><%= @post.title %></h1>
-<p><%= @post.body %></p>
 
-<%= link_to "<< Back to All Post", posts_path %>
+
+<div class="mui-container-fluid">
+  <div class="mui-row">
+      <div class="mui-col-xs-12 mui-col-md-10 mx-auto">
+          <div class="mui-panel my-3 justify-content">
+            <h1><%= @post.title %></h1>
+            <p><%= @post.body %></p>
+            <br>
+            <div class="mui-divider"></div>
+            <span><i class="fa fa-arrow-left fa-1x"></i> <%= link_to "Back to All Post", posts_path %></span>
+            &nbsp; | &nbsp;
+            <span><i class="fa fa-edit fa-1x"></i> <%= link_to 'Edit This Post', edit_post_path(@post) %></span>  &nbsp; | &nbsp;
+            <span><i class="fa fa-trash fa-1x"></i> <%= link_to 'Delete This Post', posts_path(@post), method: :delete, data: {confirm: "Are You Sure?"} %></span>
+          </div>
+          <br>
+      </div>
+  </div>
+</div>

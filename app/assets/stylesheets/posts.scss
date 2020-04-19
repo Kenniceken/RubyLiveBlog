@@ -5,6 +5,11 @@
 $font-primary: 'Exo 2', sans-serif;
 $primary: #f8b739;
 
+
+h1 {
+	font-family: $font-primary !important;
+}
+
 body{
 	font-family: $font-primary;
 	font-size: 14px;
@@ -38,4 +43,9 @@ h1, h2, h3, h4, h5,
 	font-weight: 400;
 	font-family: $font-primary;
 	color: $black;
+}
+
+.cardStyle {
+    display: block;
+    transitionDuration: 0.3s;
 }
