@@ -5,6 +5,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comment = Comment.new
+    @comment.post_id = @post.id
   end
 
   def new
@@ -38,8 +40,12 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    @post.destroy
-    redirect_to posts_path
+    if @post.destroy
+      flash[:success] = "Post '#{@post.title}' has been Successfully Deleted !!!"
+      redirect_to posts_path
+    else
+      flash[:danger] = "Post '#{@post.title}' Did not Deleted.. !!!"
+    end
   end
 
   private

@@ -8,12 +8,19 @@
             <p><%= @post.body %></p>
             <br>
             <div class="mui-divider"></div>
-            <span><i class="fa fa-arrow-left fa-1x"></i> <%= link_to "Back to All Post", posts_path %></span>
+            <br>
+            <span><i class="fa fa-arrow-left fa-1x"></i> <%= link_to "Go Back To Posts", posts_path %></span>
             &nbsp; | &nbsp;
             <span><i class="fa fa-edit fa-1x"></i> <%= link_to 'Edit This Post', edit_post_path(@post) %></span>  &nbsp; | &nbsp;
-            <span><i class="fa fa-trash fa-1x"></i> <%= link_to 'Delete This Post', posts_path(@post), method: :delete, data: {confirm: "Are You Sure?"} %></span>
+            <span><i class="fa fa-trash fa-1x"></i> <%= link_to 'Delete This Post', post_path(@post), method: :delete, data: {confirm: "Are You Sure?"} %></span>
           </div>
           <br>
       </div>
   </div>
 </div>
+
+
+<br>
+<h3>Comments (<%= @post.comments.size %>) </h3>
+<%= render partial: 'posts/comment', collection: @post.comments.reverse %>
+<%= render partial: 'comments/form' %>

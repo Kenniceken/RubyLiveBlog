@@ -22,5 +22,6 @@ Rails.application.config.assets.precompile += %w(
   normalize.css
   mixins.scss
   variables.scss
+  comments.scss
   posts.scss
  )
