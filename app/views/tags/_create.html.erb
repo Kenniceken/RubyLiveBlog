@@ -1,0 +1,15 @@
+<% if @post.errors.any? %>
+<% @post.errors.full_messages.each do |msg| %>
+    <div class="alert alert-danger" role="alert"> <%= msg %> </div>
+<% end %>
+<% end %>
+  <%= form_for @tag, :html => {:class => 'mui-form'} do |f|  %>
+      <div class="mui-textfield">
+        <%= f.text_field(:name, {:placeholder => 'Name', :required => true}) %>
+      </div>
+      <p>
+        <span><%= f.submit({:class => 'mui-btn mui-btn--primary'}) %></span>
+          &nbsp;
+        <span><%= link_to "Go Back To Tags", tags_path, {:class => 'mui-btn mui-btn--secondary'} %></span>
+      </p>
+  <% end %>

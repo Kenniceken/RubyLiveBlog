@@ -10,6 +10,10 @@
       <div class="mui-textfield">
         <%= f.text_area(:body, {:placeholder => 'Body', :required => true}) %>
       </div>
+      <div class="mui-textfield">
+        <%= f.label :tag_list %><br />
+        <%= f.text_field :tag_list %>
+      </div>
       <p>
         <span><%= f.submit({:class => 'mui-btn mui-btn--primary'}) %></span>
           &nbsp;
